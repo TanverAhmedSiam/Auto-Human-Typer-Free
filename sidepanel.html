@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human Auto Typer</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <img src="icons/icon32.png" width="22" height="22" alt="">
+      <h1>Human Auto Typer</h1>
+    </header>
+
+    <section class="editor" aria-label="Text to type">
+      <div class="toolbar">
+        <button id="pasteBtn" class="chip" type="button">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg>
+          Paste
+        </button>
+        <button id="clearBtn" class="chip" type="button">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>
+          Clear
+        </button>
+      </div>
+      <div class="box">
+        <textarea id="text" placeholder="Paste or write the text you want typed…" spellcheck="false"></textarea>
+        <span id="count" class="count">0 chars</span>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="startBtn" class="btn start" type="button">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>
+        Start
+      </button>
+      <button id="stopBtn" class="btn stop" type="button" disabled>
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
+        Stop
+      </button>
+    </div>
+
+    <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+    <p id="status" class="status" role="status">Click where you want to type on the page, then press Start.</p>
+
+    <section class="card">
+      <div class="row">
+        <label for="speed" class="title">Typing speed</label>
+        <span id="wpm" class="sub"></span>
+      </div>
+      <input id="speed" type="range" min="1" max="100" value="35">
+      <div class="ends"><span>Slow</span><span>Fast</span></div>
+    </section>
+
+    <section class="card row toggle-card">
+      <div>
+        <div class="title">Human mode</div>
+        <div class="sub">Random pauses and typos, fixed the way a person would</div>
+      </div>
+      <label class="switch">
+        <input id="human" type="checkbox" checked aria-label="Human mode">
+        <span class="track"></span>
+      </label>
+    </section>
+  </main>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
